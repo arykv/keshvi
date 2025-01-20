@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Keshvi!</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2; 
+    }
+
+    .blur-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(5px);
+      background-color: rgba(0, 0, 0, 0.1);
+      z-index: -1; 
+    }
+
+    .content {
+      position: relative;
+      z-index: 1; 
+      color: white;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      height: 420px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin: 30px auto;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) rotate(5deg);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    .card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      background: rgba(89, 42, 42, 0.518);
+      color: white;
+      backdrop-filter: blur(10px);
+      transform: translateY(100%);
+      transition: transform 0.3s ease, transform 0.3s ease;
+    }
+
+    .card:hover .card-content {
+      transform: translateY(0) translateX(-10px); /* Added translateX to move content left */
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .card-description {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: 90%;
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <video class="video-background" autoplay muted>
+    <source src="background-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="blur-overlay"></div>
+
+  <div class="content">
+    <br><br>
+    <h1>Happiesstttt Birthdayyyyy Keshviii!</h1>
+    <h2>maarii bayriii 17 varshhh ni thaii gyii🤭🤭</h2>
+    <h3>butt seriouslllyy i loveee youuuuu craizzy saara, abhii ykk pura paragraph nahii likhugaa kyuki vohh tohh chatt pe hi likhh diyaa hogaa maineee, parr haaa</h3>
+    <h3>youu meannn a lott too meee🤭 andd abhiii i meann thankss forr beingg in my lifee💗💗</h3>
+
+    <div class="card">
+      <img src="uss.png" alt="Card Image">
+      <div class="card-content">
+        <h3 class="card-title">Uss &lt;3</h3>
+        <p class="card-description">
+          Jevlaska Jaanemannn💗🤭💐<br>
+          koii photoo hi nahii hai maire paas apnii<br>
+          yeh bhi reel se nikali hai<br>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const video = document.querySelector('.video-background');
+    video.addEventListener('ended', () => {
+      video.pause();
+    });
+  </script>
+</body>
+</html>
