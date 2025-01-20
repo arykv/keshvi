@@ -78,13 +78,16 @@
       bottom: 0;
       left: 0;
       width: 100%;
+      max-height: 50%; /* Ensure the card content doesn't overflow too much */
       padding: 20px;
       background: rgba(89, 42, 42, 0.518);
       color: white;
       backdrop-filter: blur(10px);
+      overflow-y: auto; /* Enable scrolling */
       transform: translateY(100%);
-      transition: transform 0.3s ease, transform 0.3s ease;
+      transition: transform 0.3s ease;
     }
+    
 
     .card:hover .card-content {
       transform: translateY(0) translateX(-10px); /* Added translateX to move content left */
@@ -107,6 +110,13 @@
         height: 400px;
       }
     }
+    @media (max-width: 768px) {
+      .card {
+        width: 90%;
+        max-height: 400px;
+      }
+    }
+    
   </style>
 </head>
 <body>
