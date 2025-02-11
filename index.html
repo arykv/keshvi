@@ -88,6 +88,7 @@
             transition: transform 0.2s ease-in-out, opacity 0.5s ease-in-out;
         }
 
+        /* Falling Heart Styles */
         .heart {
             position: absolute;
             width: 40px;
@@ -102,12 +103,20 @@
             opacity: 0;
             pointer-events: none;
         }
+
+        /* Image Animation */
+        #loveImage {
+            position: absolute;
+            width: 150px; /* Adjust size */
+            opacity: 0;
+            transition: opacity 1s ease-in-out, transform 2s ease-in-out;
+        }
     </style>
 </head>
 <body>
     <div class="background-container">
         <video class="background-video" autoplay loop muted>
-            <source src="bgrnd.mp4" type="video/mp4">
+            <source src="bgrnd.mov" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="blur-overlay"></div>
@@ -161,13 +170,36 @@
         }
 
         function sayYes() {
-
             document.getElementById("question").classList.add("hidden");
             document.getElementById("buttons").classList.add("hidden");
-
+        
             createAllHearts();
             setTimeout(arrangeHearts, 3400);
+        
+            setTimeout(() => {
+                let message = document.createElement("h1");
+                message.innerText = "YAYAYAYAYAYAYAYAYYA! I LOVE YOUUU💐💖💖💖";
+                message.style.position = "absolute";
+                message.style.top = "25%";
+                message.style.left = "50%";
+                message.style.transform = "translate(-50%, -50%)";
+                message.style.color = "#ff69b4";
+                message.style.fontSize = "48px";
+                message.style.fontWeight = "bold";
+                message.style.opacity = "0";
+                message.style.transition = "opacity 1s ease-in-out";
+        
+                document.body.appendChild(message);
+                
+                setTimeout(() => {
+                    message.style.opacity = "1";
+                    setTimeout(showMovingImage, 2000);
+                }, 3000);
+            }, 4000);
         }
+        
+        
+        
 
         function moveNo() {
             let button = document.querySelector('.no');
@@ -184,6 +216,34 @@
             button.style.transform = `translate(${newX - rect.left}px, ${newY - rect.top}px)`;
         }
     </script>
-
+    <!-- function showMovingImage() {
+        let img = document.createElement("img");
+        img.src = "yaya.png";  
+        img.id = "loveImage"; 
+        img.style.position = "absolute";
+        img.style.width = "150px"; 
+        img.style.left = "50%";
+        img.style.top = "70%";
+        img.style.opacity = "1";
+        img.style.transition = "transform 2s ease-in-out";
+        
+        document.body.appendChild(img);
+    
+        let screenWidth = window.innerWidth;
+        let screenHeight = window.innerHeight;
+        let moveRight = true;
+    
+        function moveVPattern() {
+            let x = moveRight ? screenWidth * 0.8 : screenWidth * 0.2;
+            let y = moveRight ? "60%" : "40%";
+            
+            img.style.transform = `translate(${x - screenWidth / 2}px, ${y})`;
+    
+            moveRight = !moveRight;
+            setTimeout(moveVPattern, 2000);
+        }
+    
+        setTimeout(moveVPattern, 4000);
+    }  -->
 </body>
 </html>
