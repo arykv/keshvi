@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaanemann Valentine?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .background-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        .blur-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.25); 
+            backdrop-filter: blur(10px); 
+            z-index: 1;
+        }
+
+        h1 {
+            color: #d63384;
+            position: relative;
+            z-index: 2;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .buttons {
+            position: relative;
+            margin-top: 20px;
+            z-index: 2;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .yes {
+            background-color: #ff69b4;
+            color: white;
+        }
+
+        .no {
+            background-color: #ff4747;
+            color: white;
+            position: absolute;
+            transition: transform 0.2s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        /* Falling Heart Styles */
+        .heart {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: url('heart.png') no-repeat center;
+            background-size: contain;
+            opacity: 0;
+            transition: transform 1s ease-in-out, opacity 1s;
+        }
+
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container">
+        <video class="background-video" autoplay loop muted>
+            <source src="bgrnd.mov" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="blur-overlay"></div>
+    </div>
+
+    <h1 id="question">Will you be my Valentine pyaaruuuu? 💖</h1>
+    <div class="buttons" id="buttons">
+        <button class="yes" onclick="sayYes()">Yes</button>
+        <button class="no" onmouseover="moveNo()">No</button>
+    </div>
+
+    <script>
+        let hearts = [];
+        let numHearts = 30;
+
+        function createAllHearts() {
+            for (let i = 0; i < numHearts; i++) {
+                let heart = document.createElement("div");
+                heart.classList.add("heart");
+                document.body.appendChild(heart);
+
+                let startX = Math.random() * window.innerWidth;
+                let startY = Math.random() * -window.innerHeight;
+
+                heart.style.left = `${startX}px`;
+                heart.style.top = `${startY}px`;
+
+                setTimeout(() => {
+                    heart.style.opacity = "1";
+                    heart.style.transform = `translateY(${window.innerHeight}px)`;
+                }, i * 100);
+
+                hearts.push(heart);
+            }
+        }
+
+        function arrangeHearts() {
+            let centerX = window.innerWidth / 2;
+            let centerY = window.innerHeight / 2 - 50;
+
+            hearts.forEach((heart, i) => {
+                let t = (i / numHearts) * (Math.PI * 2); 
+                let x = 120 * Math.pow(Math.sin(t), 3);
+                let y = -100 * Math.cos(t) + 40 * Math.cos(2 * t) + 20 * Math.cos(3 * t) + 10 * Math.cos(4 * t);
+
+                setTimeout(() => {
+                    heart.style.transition = "transform 1s ease-in-out";
+                    heart.style.transform = `translate(${centerX + x - heart.offsetLeft}px, ${centerY + y - heart.offsetTop}px)`;
+                }, 2000);
+            });
+        }
+
+        function sayYes() {
+
+            document.getElementById("question").classList.add("hidden");
+            document.getElementById("buttons").classList.add("hidden");
+
+            createAllHearts();
+            setTimeout(arrangeHearts, 3400);
+        }
+
+        function moveNo() {
+            let button = document.querySelector('.no');
+            let rect = button.getBoundingClientRect();
+            let offsetX = (Math.random() * 300); 
+            let offsetY = (Math.random() * 300); 
+            
+            let newX = rect.left + offsetX;
+            let newY = rect.top + offsetY;
+            
+            newX = Math.max(0, Math.min(window.innerWidth - rect.width, newX));
+            newY = Math.max(0, Math.min(window.innerHeight - rect.height, newY));
+            
+            button.style.transform = `translate(${newX - rect.left}px, ${newY - rect.top}px)`;
+        }
+    </script>
+
+</body>
+</html>
