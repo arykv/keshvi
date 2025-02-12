@@ -198,25 +198,7 @@
             }, 4000);
         }
         
-        
-        
-
-        function moveNo() {
-            let button = document.querySelector('.no');
-            let rect = button.getBoundingClientRect();
-            let offsetX = (Math.random() * 300); 
-            let offsetY = (Math.random() * 300); 
-            
-            let newX = rect.left + offsetX;
-            let newY = rect.top + offsetY;
-            
-            newX = Math.max(0, Math.min(window.innerWidth - rect.width, newX));
-            newY = Math.max(0, Math.min(window.innerHeight - rect.height, newY));
-            
-            button.style.transform = `translate(${newX - rect.left}px, ${newY - rect.top}px)`;
-        }
-    </script>
-    <!-- function showMovingImage() {
+        function showMovingImage() {
         let img = document.createElement("img");
         img.src = "yaya.png";  
         img.id = "loveImage"; 
@@ -244,7 +226,25 @@
         }
     
         setTimeout(moveVPattern, 4000);
-    }  -->
+    } 
+        
+
+        function moveNo() {
+            let button = document.querySelector('.no');
+            let rect = button.getBoundingClientRect();
+            let offsetX = (Math.random() * 300); 
+            let offsetY = (Math.random() * 300); 
+            
+            let newX = rect.left + offsetX;
+            let newY = rect.top + offsetY;
+            
+            newX = Math.max(0, Math.min(window.innerWidth - rect.width, newX));
+            newY = Math.max(0, Math.min(window.innerHeight - rect.height, newY));
+            
+            button.style.transform = `translate(${newX - rect.left}px, ${newY - rect.top}px)`;
+        }
+    </script>
+     
 </body>
 </html>
 
