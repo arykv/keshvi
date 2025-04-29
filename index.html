@@ -1,250 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaanemann Valentine?</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .background-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .background-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-        }
-
-        .blur-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.25); 
-            backdrop-filter: blur(10px); 
-            z-index: 1;
-        }
-
-        h1 {
-            color: #d63384;
-            position: relative;
-            z-index: 2;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .buttons {
-            position: relative;
-            margin-top: 20px;
-            z-index: 2;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        button {
-            font-size: 20px;
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-            border: none;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-
-        .yes {
-            background-color: #ff69b4;
-            color: white;
-        }
-
-        .no {
-            background-color: #ff4747;
-            color: white;
-            position: absolute;
-            transition: transform 0.2s ease-in-out, opacity 0.5s ease-in-out;
-        }
-
-        /* Falling Heart Styles */
-        .heart {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background: url('heart.png') no-repeat center;
-            background-size: contain;
-            opacity: 0;
-            transition: transform 1s ease-in-out, opacity 1s;
-        }
-
-        .hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        /* Image Animation */
-        #loveImage {
-            position: absolute;
-            width: 150px; /* Adjust size */
-            opacity: 0;
-            transition: opacity 1s ease-in-out, transform 2s ease-in-out;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Us Forever ♡</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background: rgb(170, 170, 170);
+      color: #333;
+    }
+    header {
+      background: 	#e8a6b0;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    header h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      margin: 0;
+      color: #d6336c;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .media-box {
+      background: rgb(170, 170, 170);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .media-box:hover {
+      transform: scale(1.03);
+    }
+    .media-box img,
+    .media-box video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .caption {
+      padding: 0.8rem 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-    <div class="background-container">
-        <video class="background-video" autoplay loop muted>
-            <source src="bgrnd.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="blur-overlay"></div>
+  <header>
+    <h1>Us Forever ♡</h1>
+    <p>All our memories, all my love — always yours.</p>
+  </header>
+
+  <section class="gallery">
+    <div class="media-box">
+      <img src="images/pic1.png" alt="Us laughing">
+      <div class="caption">first time ham milee bahar after our relationship started</div>
+    </div>
+    <div class="media-box">
+      <video autoplay loop muted controls>
+        <source src="uttarayan.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="caption">Uss >>> thee wholee worldd🌍🌌 kitneee pyaaree haii humm, pleasee hampee givee upp matt karr jaaanemannn, tryy kartee haii naa, maii changee hoo jaugaaa, teree liyee maii kuchh bhii karugaaa pyaaruu please</div>
+    </div>
+    <div class="media-box">
+      <video autoplay loop muted controls>
+        <source src="birthday_car.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <br><br><br>
+      <video autoplay loop muted controls>
+        <source src="her_home.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="caption">cutesyyy cutesyyy, myy badd phonee bhulnee kee liyee bedd peee😅</div>
+    </div>
+    <div class="media-box">
+      <video autoplay loop muted controls>
+        <source src="video_call_1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="caption">i loveeee ourrr conversationsss, i loveee talkinggg too youuuu</div>
+    </div>
+    <div class="media-box">
+      <video autoplay loop muted controls>
+        <source src="birthday_main.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="caption">meriiii jaanemannnn kaa birthdayyy, asliiii gifttt tohh tuu hiii meriii🤭</div>
+    </div>
+    <div class="media-box">
+      <video autoplay loop muted controls>
+        <source src="paparazzi.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="caption">foreverr wantt to be your personall photographerr, please mat chod mujhe</div>
+    </div>
+    <div class="media-box">
+      <video autoplay loop muted controls>
+        <source src="together_cutesy.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="caption">hameshaaa aisee saathh rehtee naa?</div>
+    </div>
+    <div class="media-box">
+      <video autoplay loop muted controls>
+        <source src="video_call_2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="caption">godddd pleaseeeee, tuuu naiii jaaa sktiiiii mekooo chodddd keeee</div>
+    </div>
+    <div class="media-box">
+      <video autoplay loop muted controls>
+        <source src="dare_kiss.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="caption">tereee saathhh rehnaa haii mujhee purii lifee pleaseee</div>
+    </div>
+    <div class="media-box">
+      <video autoplay loop muted controls>
+        <source src="video_call_4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="caption">hamaraaaa firstttt everrrr videoooo calllll craizyyyy purriii raatt baattt karriii thiii, kyaaa craizyyy mazaaa aayaa</div>
+    </div>
+    <div class="media-box">
+      <video autoplay loop muted controls>
+        <source src="together_kiss.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="caption">meriii cutieepatootieeeeee haii naa tuu, tohhh firrr don'tt leaveee pleaseee</div>
+    </div>
+    <div class="media-box">
+      <video autoplay loop muted controls>
+        <source src="video_call_3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="caption">crazyyy pyaarr haii mujheeee tujhseeeee, i can'tt tereee binaaaa, i justtt can'ttt, mattt chodnaaaa mekooo</div>
     </div>
 
-    <h1 id="question">Will you be my Valentine pyaaruuuu? 💖</h1>
-    <div class="buttons" id="buttons">
-        <button class="yes" onclick="sayYes()">Yes</button>
-        <button class="no" onmouseover="moveNo()">No</button>
-    </div>
-
-    <script>
-        let hearts = [];
-        let numHearts = 30;
-
-        function createAllHearts() {
-            for (let i = 0; i < numHearts; i++) {
-                let heart = document.createElement("div");
-                heart.classList.add("heart");
-                document.body.appendChild(heart);
-
-                let startX = Math.random() * window.innerWidth;
-                let startY = Math.random() * -window.innerHeight;
-
-                heart.style.left = `${startX}px`;
-                heart.style.top = `${startY}px`;
-
-                setTimeout(() => {
-                    heart.style.opacity = "1";
-                    heart.style.transform = `translateY(${window.innerHeight}px)`;
-                }, i * 100);
-
-                hearts.push(heart);
-            }
-        }
-
-        function arrangeHearts() {
-            let centerX = window.innerWidth / 2;
-            let centerY = window.innerHeight / 2 - 50;
-
-            hearts.forEach((heart, i) => {
-                let t = (i / numHearts) * (Math.PI * 2); 
-                let x = 120 * Math.pow(Math.sin(t), 3);
-                let y = -100 * Math.cos(t) + 40 * Math.cos(2 * t) + 20 * Math.cos(3 * t) + 10 * Math.cos(4 * t);
-
-                setTimeout(() => {
-                    heart.style.transition = "transform 1s ease-in-out";
-                    heart.style.transform = `translate(${centerX + x - heart.offsetLeft}px, ${centerY + y - heart.offsetTop}px)`;
-                }, 2000);
-            });
-        }
-
-        function sayYes() {
-            document.getElementById("question").classList.add("hidden");
-            document.getElementById("buttons").classList.add("hidden");
-        
-            createAllHearts();
-            setTimeout(arrangeHearts, 3400);
-        
-            setTimeout(() => {
-                let message = document.createElement("h1");
-                message.innerText = "YAYAYAYAYAYAYAYAYYA! I LOVE YOUUU💐💐💐💖💖💖";
-                message.style.position = "absolute";
-                message.style.top = "25%";
-                message.style.left = "50%";
-                message.style.transform = "translate(-50%, -50%)";
-                message.style.color = "#ff69b4";
-                message.style.fontSize = "46px";
-                message.style.fontWeight = "bold";
-                message.style.opacity = "0";
-                message.style.transition = "opacity 1s ease-in-out";
-        
-                document.body.appendChild(message);
-                
-                setTimeout(() => {
-                    message.style.opacity = "1";
-                    setTimeout(showMovingImage, 2000);
-                }, 3000);
-            }, 4000);
-        }
-        
-        function showMovingImage() {
-        let img = document.createElement("img");
-        img.src = "yaya.png";  
-        img.id = "loveImage"; 
-        img.style.position = "absolute";
-        img.style.width = "150px"; 
-        img.style.left = "50%";
-        img.style.top = "70%";
-        img.style.opacity = "1";
-        img.style.transition = "transform 2s ease-in-out";
-        
-        document.body.appendChild(img);
     
-        let screenWidth = window.innerWidth;
-        let screenHeight = window.innerHeight;
-        let moveRight = true;
-    
-        function moveVPattern() {
-            let x = moveRight ? screenWidth * 0.8 : screenWidth * 0.2;
-            let y = moveRight ? "60%" : "40%";
-            
-            img.style.transform = `translate(${x - screenWidth / 2}px, ${y})`;
-    
-            moveRight = !moveRight;
-            setTimeout(moveVPattern, 2000);
-        }
-    
-        setTimeout(moveVPattern, 4000);
-    } 
-        
-
-        function moveNo() {
-            let button = document.querySelector('.no');
-            let rect = button.getBoundingClientRect();
-            let offsetX = (Math.random() * 300); 
-            let offsetY = (Math.random() * 300); 
-            
-            let newX = rect.left + offsetX;
-            let newY = rect.top + offsetY;
-            
-            newX = Math.max(0, Math.min(window.innerWidth - rect.width, newX));
-            newY = Math.max(0, Math.min(window.innerHeight - rect.height, newY));
-            
-            button.style.transform = `translate(${newX - rect.left}px, ${newY - rect.top}px)`;
-        }
-    </script>
-     
+  </section>
 </body>
 </html>
-
